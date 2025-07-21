@@ -1,14 +1,25 @@
 import { groupFilesByType } from "@/app/utils";
 import Image from "next/image";
+import { UPLOAD_DIR } from "../constants";
+import fs from "fs/promises";
+import { deleteFile } from "../actions";
 
 const List = async () => {
   let files: string[] = [];
+
+  try {
+    files = await fs.readdir(UPLOAD_DIR);
+  } catch (error) {
+    console.error(error);
+    await fs.mkdir(UPLOAD_DIR);
+  }
 
   const groupedFiles = groupFilesByType(files);
 
   const handleDelete = async (fileName: string) => {
     "use server";
-    // TODO
+
+    await deleteFile(fileName);
   };
 
   return (
