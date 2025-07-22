@@ -3,6 +3,7 @@ import { ALLOWED_TYPES, MAX_FILE_SIZE } from "@/app/constants";
 import { formatFileSize } from "@/app/utils";
 import { upload } from "../actions";
 import { useState } from "react";
+import { FiUploadCloud } from "react-icons/fi";
 
 const Form = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -18,26 +19,30 @@ const Form = () => {
   };
 
   return (
-    <div className="p-6 rounded-lg bg-[#282a36] mb-8 border border-[#44475a]">
+    <div className="p-6 rounded-lg bg-background border border-accent shadow-md mb-8 font-sans text-foreground max-w-md mx-auto">
       <form action={handleUpload}>
-        <div className="space-y-4">
-          <div className="border-2 border-dashed border-[#44475a] rounded-lg p-6 bg-[#1e1f29]">
+        <div className="space-y-6">
+          <div className="border-2 border-dashed border-accent rounded-lg p-6 bg-white bg-opacity-90">
             <input
               name="file"
               type="file"
               accept={Object.keys(ALLOWED_TYPES).join(",")}
-              className="text-[#f8f8f2] file:p-2 file:rounded-lg file:border-0 file:bg-[#bd93f9] hover:file:bg-[#ff79c6]"
+              className="text-foreground file:p-2 file:rounded-lg file:border-0 file:bg-primary file:text-white hover:file:bg-primary-hover cursor-pointer"
             />
-            <p className="mt-2 text-[#6272a4]">
+            <p className="mt-3 text-sm text-accent">
               Max file size: {formatFileSize(MAX_FILE_SIZE)}
             </p>
           </div>
 
-          {errorMessage && <p className="text-[#ff5555]">{errorMessage}</p>}
+          {errorMessage && (
+            <p className="text-sm text-red-600 font-semibold">{errorMessage}</p>
+          )}
+
           <button
             type="submit"
-            className="w-full p-2 bg-[#bd93f9] rounded-lg hover:bg-[#ff79c6]"
+            className="w-full py-2 bg-primary rounded-lg text-white font-semibold hover:bg-primary-hover transition-colors duration-200 flex items-center justify-center gap-2"
           >
+            <FiUploadCloud size={20} />
             Upload File
           </button>
         </div>
