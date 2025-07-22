@@ -13,8 +13,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
 const metadata: Metadata = {
-  title: "File Manager",
+  title: "Stardust Sparkle Files",
+  description:
+    "Seu espaço pessoal para uploads, onde arquivos brilham com estilo.",
+  keywords: [
+    "upload de arquivos",
+    "armazenamento online",
+    "gerenciador de arquivos",
+    "Stardust Sparkle Files",
+    "upload seguro",
+    "armazenamento pessoal",
+  ],
+  creator: "Alan Ryan da Silva Domingues",
+  robots: "index, follow",
+  openGraph: {
+    title: "Stardust Sparkle Files",
+    description:
+      "Seu espaço pessoal para uploads, onde arquivos brilham com estilo.",
+    url: siteUrl,
+    siteName: "Stardust Sparkle Files",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/assets/images/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Stardust Sparkle Files - Espaço pessoal para uploads",
+      },
+    ],
+  },
 };
 
 type LayoutProps = {
@@ -23,7 +54,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

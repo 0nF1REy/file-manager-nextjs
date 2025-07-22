@@ -19,9 +19,6 @@ export default {
       fontFamily: {
         sans: ["Merriweather", "sans-serif"],
       },
-      backgroundImage: {
-        "marble-texture": "url('/marble-texture.png')",
-      },
     },
   },
   plugins: [],
