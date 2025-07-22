@@ -30,7 +30,7 @@ const GET = async (_: NextRequest, { params }: { params: Params }) => {
 
     try {
       await fs.access(filePath);
-    } catch (error) {
+    } catch {
       return NextResponse.json(
         { error: "Arquivo não encontrado" },
         { status: 404 }

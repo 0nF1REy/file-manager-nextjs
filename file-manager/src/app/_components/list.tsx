@@ -25,22 +25,22 @@ const List = async () => {
   return (
     <>
       {Object.entries(groupedFiles).map(([type, typeFiles]) => (
-        <div key={type} className="mb-8">
-          <h2 className="text-xl font-semibold mb-4 capitalize text-[#f8f8f2]">
+        <section key={type} className="mb-10">
+          <h2 className="text-2xl font-semibold mb-5 capitalize text-foreground">
             {type} Files
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {typeFiles.map((file) => (
-              <div
+              <article
                 key={file}
-                className="bg-[#282a36] p-4 rounded-lg border border-[#44475a]"
+                className="bg-white bg-opacity-90 rounded-lg border border-accent p-5 shadow-sm"
               >
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-[#f8f8f2] truncate">
+                    <p className="text-base font-medium text-foreground truncate">
                       {file.substring(file.indexOf("-") + 1)}
                     </p>
-                    <p className="text-xs text-[#6272a4]">
+                    <p className="text-sm text-accent">
                       {new Date(
                         parseInt(file.split("-")[0])
                       ).toLocaleDateString()}
@@ -49,7 +49,7 @@ const List = async () => {
                   <form action={handleDelete.bind(null, file)}>
                     <button
                       type="submit"
-                      className="ml-2 px-3 py-1 bg-[#ff5555] text-[#282a36] rounded-lg"
+                      className="ml-3 px-4 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-150"
                     >
                       Delete
                     </button>
@@ -57,52 +57,55 @@ const List = async () => {
                 </div>
 
                 {type === "image" && (
-                  <div className="relative aspect-video bg-[#1e1f29] rounded-md">
+                  <div className="relative aspect-video bg-background rounded-md overflow-hidden shadow-inner">
                     <Image
                       src={`/api/download/${file}`}
                       alt={file}
                       fill
-                      className="rounded-md object-contain"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 )}
+
                 {type === "video" && (
                   <video
-                    className="w-full rounded-md bg-[#1e1f29]"
+                    className="w-full rounded-md bg-background shadow-inner"
                     controls
                     src={`/api/download/${file}`}
                   />
                 )}
+
                 {type === "audio" && (
                   <audio
-                    className="w-full mt-3"
+                    className="w-full mt-4"
                     controls
                     src={`/api/download/${file}`}
                     preload="none"
                   />
                 )}
+
                 {(type === "document" || type === "other") && (
-                  <div className="mt-2">
+                  <div className="mt-4">
                     <a
                       href={`/api/download/${file}`}
-                      className="text-[#bd93f9] hover:text-[#ff79c6] text-sm"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-hover text-base font-semibold"
                     >
                       Download File
                     </a>
                   </div>
                 )}
-              </div>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
       ))}
 
       {files.length === 0 && (
-        <div className="text-center py-12 bg-[#1e1f29] rounded-lg border border-[#44475a]">
-          <p className="text-[#6272a4]">No files uploaded yet</p>
+        <div className="text-center py-16 bg-background rounded-lg border border-accent shadow-sm">
+          <p className="text-accent text-lg">No files uploaded yet</p>
         </div>
       )}
     </>

@@ -9,8 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FFFAF0",
+        foreground: "#41444B",
+        primary: "#D2691E",
+        "primary-hover": "#B85A1A",
+        accent: "#DAA520",
+        "accent-hover": "#C0901A",
+      },
+      fontFamily: {
+        sans: ["Merriweather", "sans-serif"],
       },
     },
   },
