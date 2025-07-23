@@ -27,20 +27,20 @@ const List = async () => {
       {Object.entries(groupedFiles).map(([type, typeFiles]) => (
         <section key={type} className="mb-10">
           <h2 className="text-2xl font-semibold mb-5 capitalize text-foreground">
-            {type} Files
+            {type} Arquivos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {typeFiles.map((file) => (
               <article
                 key={file}
-                className="bg-white bg-opacity-90 rounded-lg border border-accent p-5 shadow-sm"
+                className="bg-white bg-opacity-90 rounded-lg border border-[#2563eb] p-5 shadow-sm"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex-1 min-w-0">
                     <p className="text-base font-medium text-foreground truncate">
                       {file.substring(file.indexOf("-") + 1)}
                     </p>
-                    <p className="text-sm text-accent">
+                    <p className="text-sm text-[#2563eb]">
                       {new Date(
                         parseInt(file.split("-")[0])
                       ).toLocaleDateString()}
@@ -51,7 +51,7 @@ const List = async () => {
                       type="submit"
                       className="ml-3 px-4 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-150"
                     >
-                      Delete
+                      Deletar
                     </button>
                   </form>
                 </div>
@@ -91,9 +91,9 @@ const List = async () => {
                       href={`/api/download/${file}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary-hover text-base font-semibold"
+                      className="text-[#2563eb] hover:text-[#1d4ed8] text-base font-semibold"
                     >
-                      Download File
+                      Baixar Arquivo
                     </a>
                   </div>
                 )}
@@ -104,8 +104,8 @@ const List = async () => {
       ))}
 
       {files.length === 0 && (
-        <div className="text-center py-16 bg-background rounded-lg border border-accent shadow-sm">
-          <p className="text-accent text-lg">No files uploaded yet</p>
+        <div className="text-center py-16 bg-background rounded-lg border border-[#2563eb] shadow-sm">
+          <p className="text-[#2563eb] text-lg">Nenhum arquivo enviado ainda</p>
         </div>
       )}
     </>

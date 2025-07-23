@@ -5,11 +5,11 @@ const dynamic = "force-dynamic";
 
 const Page = async () => {
   return (
-<div className="min-h-screen bg-background font-sans text-foreground">
+    <div className="min-h-screen bg-background font-sans text-foreground">
       {/* Header */}
-      <header className="py-6 px-4 sm:px-6 lg:px-8 border-b border-primary/20 bg-white/50 backdrop-blur-sm">
+      <header className="py-6 px-4 sm:px-6 lg:px-8 border-b border-[#2563eb]/20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold text-primary">
+          <h1 className="text-3xl font-bold text-[#2563eb]">
             Stardust Sparkle Files
           </h1>
           <p className="text-sm text-foreground/70 mt-1">
@@ -27,7 +27,7 @@ const Page = async () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-6 px-4 sm:px-6 lg:px-8 mt-8 border-t border-primary/20 bg-white/50 backdrop-blur-sm">
+      <footer className="py-6 px-4 sm:px-6 lg:px-8 mt-8 border-t border-[#2563eb]/20 bg-white/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-sm text-foreground/60">
             © 2025 Alan Ryan da Silva Domingues - Todos os direitos reservados

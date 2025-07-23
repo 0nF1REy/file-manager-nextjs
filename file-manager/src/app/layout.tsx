@@ -55,6 +55,9 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="icon" href="/assets/favicon/favicon.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
