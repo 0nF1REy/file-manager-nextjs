@@ -43,7 +43,7 @@ const Form = () => {
             className="w-full py-2 bg-[#2563eb] rounded-lg text-white font-semibold hover:bg-[#1d4ed8] transition-colors duration-200 flex items-center justify-center gap-2"
           >
             <FiUploadCloud size={20} />
-            Upload File
+            Enviar Arquivo
           </button>
         </div>
       </form>
