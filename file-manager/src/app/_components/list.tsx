@@ -33,14 +33,14 @@ const List = async () => {
             {typeFiles.map((file) => (
               <article
                 key={file}
-                className="bg-white bg-opacity-90 rounded-lg border border-accent p-5 shadow-sm"
+                className="bg-white bg-opacity-90 rounded-lg border border-[#2563eb] p-5 shadow-sm"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex-1 min-w-0">
                     <p className="text-base font-medium text-foreground truncate">
                       {file.substring(file.indexOf("-") + 1)}
                     </p>
-                    <p className="text-sm text-accent">
+                    <p className="text-sm text-[#2563eb]">
                       {new Date(
                         parseInt(file.split("-")[0])
                       ).toLocaleDateString()}
@@ -91,7 +91,7 @@ const List = async () => {
                       href={`/api/download/${file}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary-hover text-base font-semibold"
+                      className="text-[#2563eb] hover:text-[#1d4ed8] text-base font-semibold"
                     >
                       Download File
                     </a>
@@ -104,8 +104,8 @@ const List = async () => {
       ))}
 
       {files.length === 0 && (
-        <div className="text-center py-16 bg-background rounded-lg border border-accent shadow-sm">
-          <p className="text-accent text-lg">No files uploaded yet</p>
+        <div className="text-center py-16 bg-background rounded-lg border border-[#2563eb] shadow-sm">
+          <p className="text-[#2563eb] text-lg">No files uploaded yet</p>
         </div>
       )}
     </>
