@@ -7,14 +7,38 @@ import { FiUploadCloud } from "react-icons/fi";
 
 const Form = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setSelectedFile(file);
+    setErrorMessage(null);
+  };
 
   const handleUpload = async (formData: FormData) => {
-    const result = await upload(formData);
+    if (!selectedFile) {
+      setErrorMessage("Por favor, selecione um arquivo antes de enviar.");
+      return;
+    }
 
-    if (!result.success) {
-      setErrorMessage(result.message);
-    } else {
-      setErrorMessage(null);
+    setIsUploading(true);
+
+    try {
+      const result = await upload(formData);
+
+      if (!result.success) {
+        setErrorMessage(result.message);
+      } else {
+        setErrorMessage(null);
+        setSelectedFile(null);
+        const input = document.querySelector(
+          'input[type="file"]'
+        ) as HTMLInputElement;
+        if (input) input.value = "";
+      }
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -27,10 +51,11 @@ const Form = () => {
               name="file"
               type="file"
               accept={Object.keys(ALLOWED_TYPES).join(",")}
+              onChange={handleFileChange}
               className="text-foreground file:p-2 file:rounded-lg file:border-0 file:bg-[#2563eb] file:text-white hover:file:bg-[#1d4ed8] cursor-pointer"
             />
             <p className="mt-3 text-sm text-[#2563eb]">
-              Tamanho máximo do arquivo: {formatFileSize(MAX_FILE_SIZE)}
+              Tamanho máximo permitido: {formatFileSize(MAX_FILE_SIZE)}
             </p>
           </div>
 
@@ -40,10 +65,15 @@ const Form = () => {
 
           <button
             type="submit"
-            className="w-full py-2 bg-[#2563eb] rounded-lg text-white font-semibold hover:bg-[#1d4ed8] transition-colors duration-200 flex items-center justify-center gap-2"
+            disabled={!selectedFile || isUploading}
+            className={`w-full py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2 ${
+              !selectedFile || isUploading
+                ? "bg-gray-400 cursor-not-allowed text-gray-200"
+                : "bg-[#2563eb] text-white hover:bg-[#1d4ed8]"
+            }`}
           >
             <FiUploadCloud size={20} />
-            Enviar Arquivo
+            {isUploading ? "Enviando..." : "Enviar Arquivo"}
           </button>
         </div>
       </form>
