@@ -1,12 +1,39 @@
-# Stardust Sparkle Files
+<h1 align="center">
+   Stardust Sparkle Files
+</h1>
 
-Um gerenciador de arquivos moderno e elegante construído com Next.js 15, onde seus arquivos brilham com estilo.
+<div align="center">
 
-## 📝 Descrição
+![Maintenance](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-Conclu%C3%ADdo-brightgreen?style=for-the-badge)
 
-O Stardust Sparkle Files é uma aplicação web para upload, visualização e gerenciamento de arquivos. A aplicação oferece uma interface intuitiva e responsiva para organizar arquivos por tipo (imagens, vídeos, áudios, documentos) com funcionalidades de upload seguro, preview e download.
+![Next.js 15+](https://img.shields.io/badge/Next.js-15%2B-black.svg?style=for-the-badge&logo=next.js)
 
-## ✨ Funcionalidades
+</div>
+
+## 🧭 Guia de Navegação (Índice)
+
+- **[📖 Descrição](#descricao)**
+- **[✨ Funcionalidades](#funcionalidades)**
+- **[🛠️ Tecnologias Utilizadas](#tecnologias-utilizadas)**
+- **[📁 Estrutura do Projeto](#estrutura-do-projeto)**
+- **[🚀 Como Executar](#como-executar)**
+- **[⚙️ Configurações](#configuracoes)**
+- **[🔧 Configuração Personalizada](#configuracao-personalizada)**
+- **[🌐 API Routes](#api-routes)**
+- **[🎨 Personalização de Tema](#personalizacao-de-tema)**
+- **[🔒 Segurança](#seguranca)**
+- **[🤝 Contribuição](#contribuicao)**
+- **[📄 Licença](#licenca)**
+- **[🙏 Agradecimentos](#agradecimentos)**
+
+## 📝 Descrição <a name="descricao"></a>
+
+_Stardust Sparkle Files_ é um gerenciador de arquivos moderno e elegante, construído com **Next.js 15**, que proporciona uma experiência fluida e estilosa na organização de seus **arquivos** — onde cada item brilha com estilo.
+
+Com uma interface **intuitiva**, a aplicação permite o upload, visualização e **gerenciamento de arquivos**, organizando-os por tipo (**imagens, vídeos, áudios e documentos**). Além disso, oferece funcionalidades como _upload seguro, visualização prévia no navegador e download facilitado_, tudo pensado para garantir praticidade e uma navegação agradável.
+
+## ✨ Funcionalidades <a name="funcionalidades"></a>
 
 - 📤 **Upload de Arquivos**: Suporte a múltiplos tipos de arquivo com validação de tamanho e tipo
 - 🗂️ **Organização por Categoria**: Arquivos organizados automaticamente por tipo (Imagens, Vídeos, Áudios, Documentos, Outros)
@@ -16,7 +43,7 @@ O Stardust Sparkle Files é uma aplicação web para upload, visualização e ge
 - ⬆️ **Scroll to Top**: Botão flutuante para navegação rápida
 - 🔒 **Validação de Segurança**: Sanitização de nomes de arquivo e validação de tipos MIME
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas <a name="tecnologias-utilizadas"></a>
 
 - **Framework**: Next.js 15 (App Router)
 - **Linguagem**: TypeScript
@@ -27,7 +54,7 @@ O Stardust Sparkle Files é uma aplicação web para upload, visualização e ge
 - **Sistema de Arquivos**: Node.js fs promises
 - **Validação**: Validação customizada de MIME types
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto <a name="estrutura-do-projeto"></a>
 
 ```
 file-manager/
@@ -53,7 +80,7 @@ file-manager/
 └── package.json
 ```
 
-## 🚀 Como Executar
+## 🚀 Como Executar <a name="como-executar"></a>
 
 ### Pré-requisitos
 
@@ -94,7 +121,7 @@ npm run build
 npm start
 ```
 
-## ⚙️ Configurações
+## ⚙️ Configurações <a name="configuracoes"></a>
 
 ### Tipos de Arquivo Suportados
 
@@ -111,7 +138,7 @@ A aplicação suporta os seguintes tipos de arquivo:
 - **Tipos permitidos**: Definidos em `ALLOWED_TYPES` no arquivo de constantes
 - **Validação**: Verificação de MIME type e extensão de arquivo
 
-## 🔧 Configuração Personalizada
+## 🔧 Configuração Personalizada <a name="configuracao-personalizada"></a>
 
 ### Alterando o Tamanho Máximo de Upload
 
@@ -132,7 +159,7 @@ export const ALLOWED_TYPES = {
 };
 ```
 
-## 🌐 API Routes
+## 🌐 API Routes <a name="api-routes"></a>
 
 ### Download de Arquivos
 
@@ -144,7 +171,7 @@ GET /api/download/[fileName]
 - **Resposta**: Stream do arquivo com headers apropriados
 - **Segurança**: Validação de tamanho e sanitização de nome
 
-## 🎨 Personalização de Tema
+## 🎨 Personalização de Tema <a name="personalizacao-de-tema"></a>
 
 O projeto utiliza Tailwind CSS com um esquema de cores baseado em azul:
 
@@ -152,14 +179,14 @@ O projeto utiliza Tailwind CSS com um esquema de cores baseado em azul:
 - **Cor hover**: `#1d4ed8` (blue-700)
 - **Background**: Configurável via CSS custom properties
 
-## 🔒 Segurança
+## 🔒 Segurança <a name="seguranca"></a>
 
 - **Sanitização de Nomes**: Remoção de caracteres perigosos dos nomes de arquivo
 - **Validação MIME**: Verificação dupla de tipo de arquivo
 - **Controle de Tamanho**: Limitação de tamanho de upload
 - **Headers de Segurança**: CSP e outras proteções para downloads
 
-## 🤝 Contribuição
+## 🤝 Contribuição <a name="contribuicao"></a>
 
 1. Faça um fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -167,11 +194,11 @@ O projeto utiliza Tailwind CSS com um esquema de cores baseado em azul:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
+## 📄 Licença <a name="licenca"></a>
 
 Este projeto é destinado para fins educacionais e de aprendizado.
 
-## 🙏 Agradecimentos
+## 🙏 Agradecimentos <a name="agradecimentos"></a>
 
 - Next.js team pelo excelente framework
 - Tailwind CSS pela facilidade de estilização
