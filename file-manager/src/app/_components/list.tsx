@@ -22,12 +22,20 @@ const List = async () => {
     await deleteFile(fileName);
   };
 
+  const titleMap: Record<string, string> = {
+    image: "Imagens",
+    video: "Vídeos",
+    audio: "Áudios",
+    document: "Documentos",
+    other: "Outros",
+  };
+
   return (
     <>
       {Object.entries(groupedFiles).map(([type, typeFiles]) => (
         <section key={type} className="mb-10">
           <h2 className="text-2xl font-semibold mb-5 capitalize text-foreground">
-            {type} Arquivos
+            {titleMap[type] || type}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {typeFiles.map((file) => (
@@ -49,9 +57,19 @@ const List = async () => {
                   <form action={handleDelete.bind(null, file)}>
                     <button
                       type="submit"
-                      className="ml-3 px-4 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-150"
+                      className="ml-3 p-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-150"
+                      title="Deletar arquivo"
                     >
-                      Deletar
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h14zM10 11v6M14 11v6" />
+                      </svg>
                     </button>
                   </form>
                 </div>
