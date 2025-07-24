@@ -1,4 +1,4 @@
-const Header = () => {
+const HeaderComponent = () => {
   return (
     <header className="sticky top-0 z-50 py-6 px-4 sm:px-6 lg:px-8 border-b border-[#2563eb]/20 bg-white/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
@@ -13,4 +13,4 @@ const Header = () => {
   );
 };
 
-export { Header };
+export { HeaderComponent };
