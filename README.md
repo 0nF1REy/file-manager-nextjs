@@ -39,6 +39,8 @@ _Stardust Sparkle Files_ é um gerenciador de arquivos moderno e elegante, const
 
 ![Print da página inicial](./readme_images/01-home.png)
 
+---
+
 ![Print da página inicial](./readme_images/02-home.png)
 
 ## ✨ Funcionalidades <a name="funcionalidades"></a>
