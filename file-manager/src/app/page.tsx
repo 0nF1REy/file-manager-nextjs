@@ -2,6 +2,7 @@ import { Form } from "@/app/_components/form";
 import { List } from "@/app/_components/list";
 import { Header } from "@/app/_components/layout/header";
 import { Footer } from "@/app/_components/layout/footer";
+import { ScrollToTop } from "@/app/_components/ui/scroll-to-top";
 
 const dynamic = "force-dynamic";
 
@@ -16,6 +17,7 @@ const Page = async () => {
         </div>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
