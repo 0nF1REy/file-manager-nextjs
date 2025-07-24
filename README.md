@@ -31,9 +31,7 @@
 
 ## 📝 Descrição <a name="descricao"></a>
 
-_Stardust Sparkle Files_ é um gerenciador de arquivos moderno e elegante, construído com **Next.js 15**, que proporciona uma experiência fluida e estilosa na organização de seus **arquivos** — onde cada item brilha com estilo.
-
-Com uma interface **intuitiva**, a aplicação permite o upload, visualização e **gerenciamento de arquivos**, organizando-os por tipo (**imagens, vídeos, áudios e documentos**). Além disso, oferece funcionalidades como _upload seguro, visualização prévia no navegador e download facilitado_, tudo pensado para garantir praticidade e uma navegação agradável.
+_Stardust Sparkle Files_ é um gerenciador de arquivos moderno e elegante, construído com **Next.js 15**, que proporciona uma experiência fluida e estilosa na organização de seus **arquivos** — onde cada item brilha com estilo. Com uma interface **intuitiva**, a aplicação permite o upload, visualização e **gerenciamento de arquivos**, organizando-os por tipo (**imagens, vídeos, áudios e documentos**). Além disso, oferece funcionalidades como _upload seguro, visualização prévia no navegador e download facilitado_, tudo pensado para garantir praticidade e uma navegação agradável.
 
 ## 📸 Ilustração <a name="ilustracao"></a>
 
