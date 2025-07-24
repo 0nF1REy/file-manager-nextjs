@@ -41,6 +41,8 @@ Com uma interface **intuitiva**, a aplicação permite o upload, visualização 
 
 ![Print da página inicial](./readme_images/01-home.png)
 
+![Print da página inicial](./readme_images/02-home.png)
+
 ## ✨ Funcionalidades <a name="funcionalidades"></a>
 
 - 📤 **Upload de Arquivos**: Suporte a múltiplos tipos de arquivo com validação de tamanho e tipo
